@@ -1,0 +1,16 @@
+{
+  "game_id": "elevene",
+  "display_name": "11eyes CrossOver",
+  "source": "Snailium LNK4 container article",
+  "container": {
+    "format": "LNK4",
+    "file": "testdata/lnk4/elevene-system.dat",
+    "entry_count": 38,
+    "size_bytes": 30572544
+  },
+  "outliers": {
+    "always_png": [24],
+    "binary_file": [37]
+  },
+  "image_entries": 36
+}

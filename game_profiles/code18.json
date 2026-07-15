@@ -1,0 +1,16 @@
+{
+  "game_id": "code18",
+  "display_name": "Code_18",
+  "source": "Snailium LNK4 container article",
+  "container": {
+    "format": "LNK4",
+    "file": "to-test/code18-testdata/code18-lnk4/system.dat",
+    "entry_count": 25,
+    "size_bytes": 17426432
+  },
+  "outliers": {
+    "always_png": [19],
+    "binary_file": [24]
+  },
+  "image_entries": 23
+}

@@ -1,0 +1,16 @@
+{
+  "game_id": "sg",
+  "display_name": "Steins;Gate (Xbox 360)",
+  "source": "Snailium LNK4 container article",
+  "container": {
+    "format": "LNK4",
+    "file": "testdata/lnk4/sg-system.dat",
+    "entry_count": 61,
+    "size_bytes": 33595392
+  },
+  "outliers": {
+    "always_png": [57],
+    "binary_file": [60]
+  },
+  "image_entries": 59
+}
