@@ -9,6 +9,7 @@ Decompresses Xbox 360 compressed data blobs that use the Xbox Compression "LZXNA
 codec — the format produced by Microsoft's `xcompress.dll` and `xbcompress.exe`
 tools. These blobs are commonly found inside LNK4 game containers (e.g. from
 "11eyes CrossOver" and other Xbox 360 titles).
+The library itself is basically a wrapper on top of `libmspack`.
 
 The library handles the full decoding pipeline:
 
@@ -37,15 +38,20 @@ the native codec.
 
 ## Tested with
 
-| What | Result |
+|Building platform | Result |
 |------|--------|
-| `elevene-system.dat` (LNK4, 11eyes CrossOver) | 38/38 compressed blobs decoded, SHA-256 verified against source files |
-| `sg-system.dat` (LNK4, SteinsGate Xbox 360) | 61/61 entries, SHA-256 verified against source files |
-| 200+ LZXNATIVE blobs total | Byte-identical to `xbdecompress.exe` output |
 | Linux (gcc, clang) | Builds and passes |
 | macOS (clang) | Builds and passes |
 | Windows (MSVC) | Builds and passes |
 | Windows (mingw64 cross-compile) | Builds and passes |
+
+### Tested games
+| Game resource | Result |
+|------|--------|
+| `elevene-system.dat` (LNK4, 11eyes CrossOver) | 38/38 compressed blobs decoded, SHA-256 verified against source files |
+| `sg-system.dat` (LNK4, SteinsGate Xbox 360) | 61/61 entries, SHA-256 verified against source files |
+
+* Note that there could be differences with untested games.
 
 ## License
 
