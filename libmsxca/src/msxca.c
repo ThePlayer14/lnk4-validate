@@ -102,8 +102,13 @@ static unsigned rdBE32(const unsigned char *d, int o) {
 /* Decompress a full xcompress blob.
  * On success returns 0, sets *out (malloc'd) and *outLen.
  * Caller must free *out with msxca_free(). */
-int msxca_decompress(const unsigned char *blob, size_t blobLen,
-                     unsigned char **out, size_t *outLen) {
+#if defined(_WIN32) && !defined(__GNUC__)
+#  define MSXCA_API __declspec(dllexport)
+#else
+#  define MSXCA_API __attribute__((visibility("default")))
+#endif
+MSXCA_API int msxca_decompress(const unsigned char *blob, size_t blobLen,
+                               unsigned char **out, size_t *outLen) {
     if (blobLen < 48) return -1;
     if (rdBE32(blob, 0) != 0x0FF512EE) return -2;
 
@@ -155,4 +160,6 @@ int msxca_decompress(const unsigned char *blob, size_t blobLen,
     return 0;
 }
 
-void msxca_free(unsigned char *p) { free(p); }
+MSXCA_API void msxca_free(unsigned char *p) {
+    free(p);
+}
