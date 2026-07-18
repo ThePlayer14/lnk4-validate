@@ -27,7 +27,7 @@ The library handles the full decoding pipeline:
 cross-platform `LZXNATIVE` *encoder*. Recompression requires Microsoft's
 proprietary `xcompress.dll` (`XMemCompress`) on Windows.
 
-## Why this exists
+## The origin of the project
 
 Every pure-managed LZX decompression port tested (XMemCompressionDotNet, MonoGame
 `LzxDecoder`, cabextract-derived decoders) fails on the Xbox Compression chunk framing or
@@ -35,6 +35,8 @@ has a separate decode bug. libmspack's `lzxd`, used with chunk-deframing and a
 fresh decode context per block (`reset_interval = 0`,
 `output_length = UncompressedBlockSize`), decodes blobs **byte-identically** to
 the native codec.
+
+The library name is a shorthand for "**X**box (360) **C**ompression **A**lgorithm", also coincidentally similar to the Xpress compression format reference doc, but that one wasn't useful for the project. 
 
 ## Tested with
 
@@ -60,3 +62,7 @@ the native codec.
   `macros.h`, `readbits.h`, `readhuff.h`): LGPL 2.1 — see
   [COPYING.LIB](https://github.com/kyzer/mspack/blob/master/COPYING.LIB)
   (libmspack by Stuart Caie)
+
+# References 
+* [LZX Delta documentation](https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-patch/cc78752a-b4af-4eee-88cb-01f4d8a4c2bf), also referred as "[MS-PATCH]"
+* [Microsoft LZX Data format](https://learn.microsoft.com/en-us/previous-versions/bb417343(v=msdn.10)?redirectedfrom=MSDN#microsoft-lzx-data-compression-format), the Cabinets reference
