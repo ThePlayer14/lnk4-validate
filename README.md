@@ -163,7 +163,7 @@ or file size) — handy as a CI / regression gate.
   correctness with raw `.stream` or `.bin` known-correct references from genuine `xbdecompress.exe` output when
   available (as done for `elevene`), or rely on `libmsxca`'s proven byte-identical
   output for the same LZXNATIVE format.
-* `libmsxca` is the cross-platform decoder (Linux `.so` bundled);
+* `libmsxca` is the cross-platform decoder (Linux `.so` needed);
   on Windows/macOS point an `LIBMSXCA_SO` environment variable at `msxca.dll` / `libmsxca.dylib`.
 
 # Credit
