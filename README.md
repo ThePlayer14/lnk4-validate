@@ -156,9 +156,7 @@ or file size) — handy as a CI / regression gate.
 ## Notes / caveats
 
 * The `is_timg` check is a heuristic (header dimensions + depth 8/32 + size fit).
-  If a game ships textures with other depths, extend `lnk4lib.is_timg`.
-* Reference PNGs produced by `crosslnk4` use a converter that differs from the
-  plain TIMG→PNG path, so PNG *bytes* are **not** valid known-correct references.   
+  If a game ships textures with other depths, extend `lnk4lib.is_timg`. 
   Validate decode
   correctness with raw `.stream` or `.bin` known-correct references from genuine `xbdecompress.exe` output when
   available (as done for `elevene`), or rely on `libmsxca`'s proven byte-identical
