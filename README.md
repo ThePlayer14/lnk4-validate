@@ -163,6 +163,7 @@ or file size) — handy as a CI / regression gate.
   output for the same LZXNATIVE format.
 * `libmsxca` is the cross-platform decoder (Linux `.so` needed);
   on Windows/macOS point an `LIBMSXCA_SO` environment variable at `msxca.dll` / `libmsxca.dylib`.
+* OpenCode's Zen models were used during the development and testing phase of this project.
 
 # Credit
 - `convert_timg.py` is based on LNK4_AIO / crosslnk4's `timg.py`, made by Timo654. 
